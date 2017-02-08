@@ -1,3 +1,5 @@
+package Amazon.FullProblem;
+
 /**
  * Created by abhishek.ar on 18/01/17.
  */

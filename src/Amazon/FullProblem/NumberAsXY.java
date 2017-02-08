@@ -1,3 +1,5 @@
+package Amazon.FullProblem;
+
 //Check if a number can be expressed as x^y
 //http://www.practice.geeksforgeeks.org/problem-page.php?pid=1600
 public class NumberAsXY {
