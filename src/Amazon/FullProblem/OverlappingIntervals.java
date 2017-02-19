@@ -10,7 +10,7 @@ import java.util.Arrays;
 //
 //        Given [1,3], [2,6], [8,10], [15,18],
 //
-//        return [1,6], [8,10], [15,18].
+//        return [1,6], [8,10], [15,18]
 public class OverlappingIntervals implements Comparable<OverlappingIntervals>{
     int startTime;
     int endTime;
@@ -20,23 +20,21 @@ public class OverlappingIntervals implements Comparable<OverlappingIntervals>{
         this.endTime = endTime;
     }
 
+    public OverlappingIntervals() {
+    }
 
     @Override
     public int compareTo(OverlappingIntervals o) {
         return this.endTime < o.endTime ? -1 : 1;
     }
 
-    public OverlappingIntervals[] mergeOverLappings(OverlappingIntervals[] arr){
-        OverlappingIntervals[] newArr = new OverlappingIntervals[arr.length];
-        for(int i=0; i < arr.length-1; ++i){
-            if (arr[i].endTime > arr[i+1].startTime){
-                newArr[i].startTime = arr[i].startTime;
-                newArr[i].endTime = arr[i+1].endTime;
-            } else{
-                newArr[i] = arr[i];
-            }
-        }
-        return newArr;
+    public static void mergeOverLappings(OverlappingIntervals[] arr){
+       for(int i=0; i < arr.length -1 ; ++i){
+           if (arr[i].endTime > arr[i+1].startTime){
+               arr[i+1].startTime = arr[i].startTime;
+               arr[i] = null;
+           }
+       }
     }
 
     public static void main(String[] args){
@@ -49,6 +47,12 @@ public class OverlappingIntervals implements Comparable<OverlappingIntervals>{
         Arrays.sort(arr);
         for(OverlappingIntervals o : arr){
             System.out.println(o.startTime + " " + o.endTime);
+        }
+
+        mergeOverLappings(arr);
+        for(OverlappingIntervals o : arr){
+            if (o != null)
+                System.out.println(o.startTime + " " + o.endTime);
         }
     }
 

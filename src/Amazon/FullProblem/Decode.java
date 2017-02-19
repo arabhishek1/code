@@ -17,7 +17,7 @@ public class Decode {
             count +=  recDecode(message, n-2);
         return count;
     }
-
+    //check with poorvank.b
     public static int dpDecode(char[] message) {
         int result []= new int[message.length+1];
         result[0]=1;
