@@ -14,16 +14,21 @@ public class ParenthesisChecker {
             if(chars[i] == '{' ||chars[i] == '(' || chars[i] == '['){
                 stack.push(chars[i]);
             } else {
-                if (!stack.isEmpty())
-                    stack.pop();
+                if (stack.isEmpty()) {
+                    return false;
+                } else {
+                    char result = stack.pop();
+                    if (!((result == '{' && chars[i] == '}') || (result == '[' && chars[i] == ']') || (result == '(' && chars[i] == ')')))
+                        return false;
+                }
             }
         }
         return stack.isEmpty();
     }
 
     public static void main(String[] args){
-        String brackets= "[()]{}{[()()]()}";
-        String brackets1 = "][][";
+        String brackets= "[(])";
+        String brackets1 = "]";
         System.out.println(parenthesisChecker(brackets.toCharArray()));
     }
 }
