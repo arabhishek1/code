@@ -6,6 +6,6 @@ package Amazon.FullProblem;
 public class BooleanParenthesization {
 
     public static int booleanParanthesizationCount(boolean[] boolChars, char[] boolOperators){
-       return 0;
+        return 0;
     }
 }
