@@ -15,7 +15,7 @@ package recursion;
  T R E N D
 
  */
-public class WordSquare {
+public class    WordSquare {
 
     public static boolean wordSqaure(String [] words, int start, int end){
         if (start > end)

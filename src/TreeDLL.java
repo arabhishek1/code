@@ -45,6 +45,19 @@ public class TreeDLL {
         }
     }
 
+    public static void printSibling(Node root, int key){
+        if (root == null)
+            return;
+        if (root.left != null && root.right != null && root.left.key == key)
+            System.out.println(root.right.key);
+        if (root.left != null && root.right != null && root.right.key == key)
+            System.out.println(root.left.key);
+        if (root.left != null)
+            printSibling(root.left, key);
+        if (root.right != null)
+            printSibling(root.right, key);
+    }
+
     public static void main(String [] args){
         TreeDLL tree = new TreeDLL();
         Node root = new Node(50);
@@ -55,11 +68,11 @@ public class TreeDLL {
         root.right.left = new Node(45);
         root.right.right = new Node(70);
         root.right.right.left = new Node(65);
-        root.right.right.right = new Node(80);
+//        root.right.right.right = new Node(80);
 
         tree.root = root;
-        printNode(tree.convertLeafNodeToNode(root));
-
+//        printNode(tree.convertLeafNodeToNode(root));
+        printSibling(root, 65);
 //
     }
 }

@@ -3,7 +3,8 @@ import java.util.*;
 /**
  * Created by abhishek.ar on 28/01/17.
  */
-public class PrefixTrie {
+public class
+PrefixTrie {
 
     private static StringBuffer next = new StringBuffer();
     private static String[] arr;
