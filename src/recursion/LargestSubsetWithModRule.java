@@ -61,7 +61,7 @@ public class LargestSubsetWithModRule {
     }
 
     public static void main(String [] args){
-        int [] arr = {1,2,4,8};
+        int [] arr = {1,2,4,8,12,16,24};
         largestSubset(arr, 0, arr.length);
         Iterator<Integer> iterator = set.iterator();
         while(iterator.hasNext()){
